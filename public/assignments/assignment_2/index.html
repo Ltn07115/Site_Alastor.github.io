@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh" dir="auto">
 
-<head><script src="/ZY2457B16/site_alastor/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=ZY2457B16/site_alastor/livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Assignment 2 | Alastor&#39;s Blog</title>
 <meta name="keywords" content="">
 <meta name="description" content="Hugo Static Blog Deployment &amp; Version Control Report
@@ -101,16 +101,16 @@ Put assignment 1 into D:\Site_Alastor\content:
 🎉 The blog is now online!
 This is the first test post.">
 <meta name="author" content="Tianning Liu">
-<link rel="canonical" href="http://localhost:1313/ZY2457B16/site_alastor/assignments/assignment_2/">
-<link crossorigin="anonymous" href="/ZY2457B16/site_alastor/assets/css/stylesheet.6da9a63d25a9608bca2f7f907a030e887a7dd3c3f3918e4cc113129361414bda.css" integrity="sha256-bammPSWpYIvKL3&#43;QegMOiHp908PzkY5MwRMSk2FBS9o=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/ZY2457B16/site_alastor/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/ZY2457B16/site_alastor/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/ZY2457B16/site_alastor/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/ZY2457B16/site_alastor/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/ZY2457B16/site_alastor/safari-pinned-tab.svg">
+<link rel="canonical" href="https://ltn07115.github.io/assignments/assignment_2/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.6da9a63d25a9608bca2f7f907a030e887a7dd3c3f3918e4cc113129361414bda.css" integrity="sha256-bammPSWpYIvKL3&#43;QegMOiHp908PzkY5MwRMSk2FBS9o=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://ltn07115.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://ltn07115.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://ltn07115.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://ltn07115.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://ltn07115.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="zh" href="http://localhost:1313/ZY2457B16/site_alastor/assignments/assignment_2/">
+<link rel="alternate" hreflang="zh" href="https://ltn07115.github.io/assignments/assignment_2/">
 <noscript>
     <style>
         #theme-toggle,
@@ -119,7 +119,163 @@ This is the first test post.">
         }
 
     </style>
-</noscript>
+</noscript><meta property="og:url" content="https://ltn07115.github.io/assignments/assignment_2/">
+  <meta property="og:site_name" content="Alastor&#39;s Blog">
+  <meta property="og:title" content="Assignment 2">
+  <meta property="og:description" content="Hugo Static Blog Deployment &amp; Version Control Report Project Name: Alastor’s Blog Remote Git Repository: http://10.61.2.24:2025/ZY2457B16/site_alastor ✅ v1: Initialize Hugo Project &amp; Git Repository Used hugo new site myblog to create Hugo project structure. Initialized Git version control using git init. Connected to the remote repository and pushed the initial commit: git remote add origin http://10.61.2.24:2025/ZY2457B16/site_alastor git add . git commit -m &#34;v1: Initialize Hugo project&#34; git push -u origin master ✅ v2: Add and Configure the PaperMod Theme Added PaperMod theme as a Git submodule: git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod Updated config.toml with site basics and theme settings: baseURL = &#34;http://10.61.2.24:2025/ZY2457B16/site_alastor/&#34; title = &#34;Alastor&#39;s Blog&#34; theme = &#34;PaperMod&#34; languageCode = &#34;en-us&#34; defaultContentLanguage = &#34;en&#34; [params] ShowReadingTime = true ShowCodeCopyButtons = true Committed as version 2: git add . git commit -m &#34;v2: Add PaperMod theme and basic configuration&#34; git push ✅ v3: Personalize Site Information (Title, Language, Welcome Message) Edited config.toml to include author name, description, and welcome message: [params] author = &#34;Tianning Liu&#34; description = &#34;Personal notes and technical sharing.&#34; homeInfoCenter = true defaultTheme = &#34;dark&#34; [params.homeInfoParams] Title = &#34;Welcome to my site!&#34; Content = &#34;&#34; [pagination] size = 5 Committed as version 3: git add . git commit -m &#34;v3: Customize site (author, language, welcome message)&#34; git push ✅ v4: Beautify Homepage (Remove Cards and Default Prompts) Hide default article cards on the homepage: [params] hidePostsSectionInHome = true Adjust menu and site layout: [[menu.main]] name = &#34;Home&#34; url = &#34;/&#34; weight = 1 [[menu.main]] name = &#34;Assignments&#34; url = &#34;/assignments/&#34; weight = 2 Committed as version 4: git add . git commit -m &#34;v4: Beautify homepage (remove prompts and cards)&#34; git push ✅ v5: Publish First Blog Post Put assignment 1 into D:\Site_Alastor\content: 🎉 The blog is now online! This is the first test post.">
+  <meta property="og:locale" content="zh-cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="assignments">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Assignment 2">
+<meta name="twitter:description" content="Hugo Static Blog Deployment &amp; Version Control Report
+Project Name: Alastor&rsquo;s Blog
+Remote Git Repository: http://10.61.2.24:2025/ZY2457B16/site_alastor
+
+✅ v1: Initialize Hugo Project &amp; Git Repository
+
+Used hugo new site myblog to create Hugo project structure.
+Initialized Git version control using git init.
+Connected to the remote repository and pushed the initial commit:
+
+git remote add origin http://10.61.2.24:2025/ZY2457B16/site_alastor
+git add .
+git commit -m &#34;v1: Initialize Hugo project&#34;
+git push -u origin master
+
+✅ v2: Add and Configure the PaperMod Theme
+
+Added PaperMod theme as a Git submodule:
+
+git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+
+Updated config.toml with site basics and theme settings:
+
+baseURL = &#34;http://10.61.2.24:2025/ZY2457B16/site_alastor/&#34;
+title = &#34;Alastor&#39;s Blog&#34;
+theme = &#34;PaperMod&#34;
+languageCode = &#34;en-us&#34;
+defaultContentLanguage = &#34;en&#34;
+
+[params]
+  ShowReadingTime = true
+  ShowCodeCopyButtons = true
+
+Committed as version 2:
+
+git add .
+git commit -m &#34;v2: Add PaperMod theme and basic configuration&#34;
+git push
+
+✅ v3: Personalize Site Information (Title, Language, Welcome Message)
+
+Edited config.toml to include author name, description, and welcome message:
+
+[params]
+  author = &#34;Tianning Liu&#34;
+  description = &#34;Personal notes and technical sharing.&#34;
+  homeInfoCenter = true
+  defaultTheme = &#34;dark&#34;
+
+[params.homeInfoParams]
+  Title = &#34;Welcome to my site!&#34;
+  Content = &#34;&#34;
+
+[pagination]
+  size = 5
+
+Committed as version 3:
+
+git add .
+git commit -m &#34;v3: Customize site (author, language, welcome message)&#34;
+git push
+
+✅ v4: Beautify Homepage (Remove Cards and Default Prompts)
+
+Hide default article cards on the homepage:
+
+[params]
+  hidePostsSectionInHome = true
+
+Adjust menu and site layout:
+
+[[menu.main]]
+  name = &#34;Home&#34;
+  url = &#34;/&#34;
+  weight = 1
+
+[[menu.main]]
+  name = &#34;Assignments&#34;
+  url = &#34;/assignments/&#34;
+  weight = 2
+
+Committed as version 4:
+
+git add .
+git commit -m &#34;v4: Beautify homepage (remove prompts and cards)&#34;
+git push
+
+✅ v5: Publish First Blog Post
+
+Put assignment 1 into D:\Site_Alastor\content:
+
+🎉 The blog is now online!
+This is the first test post.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Assignments",
+      "item": "https://ltn07115.github.io/assignments/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Assignment 2",
+      "item": "https://ltn07115.github.io/assignments/assignment_2/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Assignment 2",
+  "name": "Assignment 2",
+  "description": "Hugo Static Blog Deployment \u0026amp; Version Control Report Project Name: Alastor\u0026rsquo;s Blog Remote Git Repository: http://10.61.2.24:2025/ZY2457B16/site_alastor ✅ v1: Initialize Hugo Project \u0026amp; Git Repository Used hugo new site myblog to create Hugo project structure. Initialized Git version control using git init. Connected to the remote repository and pushed the initial commit: git remote add origin http://10.61.2.24:2025/ZY2457B16/site_alastor git add . git commit -m \u0026#34;v1: Initialize Hugo project\u0026#34; git push -u origin master ✅ v2: Add and Configure the PaperMod Theme Added PaperMod theme as a Git submodule: git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod Updated config.toml with site basics and theme settings: baseURL = \u0026#34;http://10.61.2.24:2025/ZY2457B16/site_alastor/\u0026#34; title = \u0026#34;Alastor\u0026#39;s Blog\u0026#34; theme = \u0026#34;PaperMod\u0026#34; languageCode = \u0026#34;en-us\u0026#34; defaultContentLanguage = \u0026#34;en\u0026#34; [params] ShowReadingTime = true ShowCodeCopyButtons = true Committed as version 2: git add . git commit -m \u0026#34;v2: Add PaperMod theme and basic configuration\u0026#34; git push ✅ v3: Personalize Site Information (Title, Language, Welcome Message) Edited config.toml to include author name, description, and welcome message: [params] author = \u0026#34;Tianning Liu\u0026#34; description = \u0026#34;Personal notes and technical sharing.\u0026#34; homeInfoCenter = true defaultTheme = \u0026#34;dark\u0026#34; [params.homeInfoParams] Title = \u0026#34;Welcome to my site!\u0026#34; Content = \u0026#34;\u0026#34; [pagination] size = 5 Committed as version 3: git add . git commit -m \u0026#34;v3: Customize site (author, language, welcome message)\u0026#34; git push ✅ v4: Beautify Homepage (Remove Cards and Default Prompts) Hide default article cards on the homepage: [params] hidePostsSectionInHome = true Adjust menu and site layout: [[menu.main]] name = \u0026#34;Home\u0026#34; url = \u0026#34;/\u0026#34; weight = 1 [[menu.main]] name = \u0026#34;Assignments\u0026#34; url = \u0026#34;/assignments/\u0026#34; weight = 2 Committed as version 4: git add . git commit -m \u0026#34;v4: Beautify homepage (remove prompts and cards)\u0026#34; git push ✅ v5: Publish First Blog Post Put assignment 1 into D:\\Site_Alastor\\content: 🎉 The blog is now online! This is the first test post.\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "Hugo Static Blog Deployment \u0026 Version Control Report Project Name: Alastor’s Blog Remote Git Repository: http://10.61.2.24:2025/ZY2457B16/site_alastor ✅ v1: Initialize Hugo Project \u0026 Git Repository Used hugo new site myblog to create Hugo project structure. Initialized Git version control using git init. Connected to the remote repository and pushed the initial commit: git remote add origin http://10.61.2.24:2025/ZY2457B16/site_alastor git add . git commit -m \"v1: Initialize Hugo project\" git push -u origin master ✅ v2: Add and Configure the PaperMod Theme Added PaperMod theme as a Git submodule: git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod Updated config.toml with site basics and theme settings: baseURL = \"http://10.61.2.24:2025/ZY2457B16/site_alastor/\" title = \"Alastor's Blog\" theme = \"PaperMod\" languageCode = \"en-us\" defaultContentLanguage = \"en\" [params] ShowReadingTime = true ShowCodeCopyButtons = true Committed as version 2: git add . git commit -m \"v2: Add PaperMod theme and basic configuration\" git push ✅ v3: Personalize Site Information (Title, Language, Welcome Message) Edited config.toml to include author name, description, and welcome message: [params] author = \"Tianning Liu\" description = \"Personal notes and technical sharing.\" homeInfoCenter = true defaultTheme = \"dark\" [params.homeInfoParams] Title = \"Welcome to my site!\" Content = \"\" [pagination] size = 5 Committed as version 3: git add . git commit -m \"v3: Customize site (author, language, welcome message)\" git push ✅ v4: Beautify Homepage (Remove Cards and Default Prompts) Hide default article cards on the homepage: [params] hidePostsSectionInHome = true Adjust menu and site layout: [[menu.main]] name = \"Home\" url = \"/\" weight = 1 [[menu.main]] name = \"Assignments\" url = \"/assignments/\" weight = 2 Committed as version 4: git add . git commit -m \"v4: Beautify homepage (remove prompts and cards)\" git push ✅ v5: Publish First Blog Post Put assignment 1 into D:\\Site_Alastor\\content: 🎉 The blog is now online! This is the first test post.\n- Committed as version 5: ```bash git add . git commit -m \"v5: Publish first blog post\" git push 📌 Notes: Previewed using hugo server -D throughout development. All five versions were pushed to the private remote Git server. PaperMod was chosen for its minimalist and responsive design, ideal for personal technical blogs. ",
+  "wordCount" : "351",
+  "inLanguage": "zh",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Tianning Liu"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ltn07115.github.io/assignments/assignment_2/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Alastor's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ltn07115.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class=" dark" id="top">
@@ -133,7 +289,7 @@ This is the first test post.">
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/ZY2457B16/site_alastor/" accesskey="h" title="Alastor&#39;s Blog (Alt + H)">Alastor&#39;s Blog</a>
+            <a href="https://ltn07115.github.io/" accesskey="h" title="Alastor&#39;s Blog (Alt + H)">Alastor&#39;s Blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -159,12 +315,12 @@ This is the first test post.">
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/ZY2457B16/site_alastor/" title="Homepage">
+                <a href="https://ltn07115.github.io/" title="Homepage">
                     <span>Homepage</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/ZY2457B16/site_alastor/assignments/" title="Assignments">
+                <a href="https://ltn07115.github.io/assignments/" title="Assignments">
                     <span>Assignments</span>
                 </a>
             </li>
@@ -299,7 +455,7 @@ git push
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:1313/ZY2457B16/site_alastor/assignments/assignment_1/">
+  <a class="prev" href="https://ltn07115.github.io/assignments/assignment_1/">
     <span class="title">« 上一页</span>
     <br>
     <span>Assignment 1</span>
@@ -311,7 +467,7 @@ git push
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/ZY2457B16/site_alastor/">Alastor&#39;s Blog</a></span> · 
+        <span>&copy; 2025 <a href="https://ltn07115.github.io/">Alastor&#39;s Blog</a></span> · 
 
     <span>
         Powered by

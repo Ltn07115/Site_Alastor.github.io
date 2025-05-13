@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Assignments on Alastor&#39;s Blog</title>
-    <link>http://localhost:1313/ZY2457B16/site_alastor/assignments/</link>
+    <link>https://ltn07115.github.io/assignments/</link>
     <description>Recent content in Assignments on Alastor&#39;s Blog</description>
     <generator>Hugo -- 0.147.3</generator>
     <language>zh-cn</language>
-    <atom:link href="http://localhost:1313/ZY2457B16/site_alastor/assignments/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ltn07115.github.io/assignments/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Assignment 1</title>
-      <link>http://localhost:1313/ZY2457B16/site_alastor/assignments/assignment_1/</link>
+      <link>https://ltn07115.github.io/assignments/assignment_1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ZY2457B16/site_alastor/assignments/assignment_1/</guid>
+      <guid>https://ltn07115.github.io/assignments/assignment_1/</guid>
       <description>&lt;h1 id=&#34;matrix-multiplication-project-report&#34;&gt;Matrix Multiplication Project Report&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;Student Name&lt;/strong&gt;: [Tianning Liu]&lt;br&gt;
 &lt;strong&gt;Student ID&lt;/strong&gt;: [ZY2457B16]&lt;br&gt;
@@ -121,9 +121,9 @@
     </item>
     <item>
       <title>Assignment 2</title>
-      <link>http://localhost:1313/ZY2457B16/site_alastor/assignments/assignment_2/</link>
+      <link>https://ltn07115.github.io/assignments/assignment_2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ZY2457B16/site_alastor/assignments/assignment_2/</guid>
+      <guid>https://ltn07115.github.io/assignments/assignment_2/</guid>
       <description>&lt;h1 id=&#34;hugo-static-blog-deployment--version-control-report&#34;&gt;Hugo Static Blog Deployment &amp;amp; Version Control Report&lt;/h1&gt;
 &lt;h2 id=&#34;project-name-alastors-blog&#34;&gt;Project Name: Alastor&amp;rsquo;s Blog&lt;/h2&gt;
 &lt;h2 id=&#34;remote-git-repository-http10612242025zy2457b16site_&#34;&gt;Remote Git Repository: &lt;a href=&#34;http://10.61.2.24:2025/ZY2457B16/site_alastor&#34;&gt;http://10.61.2.24:2025/ZY2457B16/site_alastor&lt;/a&gt;&lt;/h2&gt;
