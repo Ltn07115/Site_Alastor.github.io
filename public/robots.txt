@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /
+Sitemap: http://localhost:1313/ZY2457B16/site_alastor/sitemap.xml

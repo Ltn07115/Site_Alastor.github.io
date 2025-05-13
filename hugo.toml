@@ -1,21 +1,34 @@
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My Hugo Blog"
+baseURL = "http://10.61.2.24:2025/ZY2457B16/site_alastor/"
+languageCode = "zh-cn"
+title = "Alastor's Blog"
 theme = "PaperMod"
+defaultContentLanguage = "zh"
+[pagination]
+  size = 5
+enableRobotsTXT = true
+timeZone = "Asia/Shanghai"
 
 [params]
+  author = "Tianning Liu"
+  description = "记录、分享与思考。"
   ShowReadingTime = true
   ShowPostNavLinks = true
-  ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
+  ShowBreadCrumbs = true
+  defaultTheme = "auto"  # 可选：dark、light、auto
+  disableThemeToggle = false
+
+[params.homeInfoParams]
+  Title = "欢迎访问我的博客"
+  Content = "这是一个基于 Hugo + PaperMod 的静态博客，用于记录我的学习与技术分享。"
 
 [menu]
   [[menu.main]]
-    name = "Home"
+    name = "主页"
     url = "/"
     weight = 1
 
   [[menu.main]]
-    name = "Posts"
+    name = "文章"
     url = "/posts/"
     weight = 2
