@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Tags | Alastor&#39;s Blog</title>
+<title>Assignments | Alastor&#39;s Blog</title>
 <meta name="keywords" content="">
-<meta name="description" content="记录、分享与思考。">
+<meta name="description" content="Assignments - Alastor&#39;s Blog">
 <meta name="author" content="Tianning Liu">
-<link rel="canonical" href="http://localhost:1313/ZY2457B16/site_alastor/tags/">
+<link rel="canonical" href="http://localhost:1313/ZY2457B16/site_alastor/assignments/">
 <link crossorigin="anonymous" href="/ZY2457B16/site_alastor/assets/css/stylesheet.6da9a63d25a9608bca2f7f907a030e887a7dd3c3f3918e4cc113129361414bda.css" integrity="sha256-bammPSWpYIvKL3&#43;QegMOiHp908PzkY5MwRMSk2FBS9o=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/ZY2457B16/site_alastor/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/ZY2457B16/site_alastor/favicon-16x16.png">
@@ -18,8 +18,8 @@
 <link rel="mask-icon" href="http://localhost:1313/ZY2457B16/site_alastor/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/ZY2457B16/site_alastor/tags/index.xml">
-<link rel="alternate" hreflang="zh" href="http://localhost:1313/ZY2457B16/site_alastor/tags/">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/ZY2457B16/site_alastor/assignments/index.xml">
+<link rel="alternate" hreflang="zh" href="http://localhost:1313/ZY2457B16/site_alastor/assignments/">
 <noscript>
     <style>
         #theme-toggle,
@@ -74,19 +74,35 @@
             </li>
             <li>
                 <a href="http://localhost:1313/ZY2457B16/site_alastor/assignments/" title="Assignments">
-                    <span>Assignments</span>
+                    <span class="active">Assignments</span>
                 </a>
             </li>
         </ul>
     </nav>
 </header>
-<main class="main">
-<header class="page-header">
-    <h1>Tags</h1>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="http://localhost:1313/ZY2457B16/site_alastor/">主页</a></div>
+  <h1>
+    Assignments
+  </h1>
 </header>
 
-<ul class="terms-tags">
-</ul>
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Matrix Multiplication Project Report Student Name: [Tianning Liu]
+Student ID: [ZY2457B16]
+Submission Date: [3/26/2025]
+System Configuration Component Details CPU Model AMD Ryzen 9 6900HX with Radeon Graphics Memory Size 16GiB Operating System Version Linux Vivian 5.15.167.4-microsoft-standard-WSL2 #1 SMP Tue Nov 5 00:21:55 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux Compiler Version gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0 Python Version Python 3.12.3 Implementation Details C Language Implementation Source Code:
+#include &lt;stdio.h&gt; #include &lt;stdlib.h&gt; typedef struct { int rows; int cols; int **data; } Matrix; Matrix allocate_matrix(int rows, int cols) { Matrix m; m.rows = rows; m.cols = cols; m.data = malloc(rows * sizeof(int*)); for (int i = 0; i &lt; rows; i&#43;&#43;) { m.data[i] = malloc(cols * sizeof(int)); } return m; } void free_matrix(Matrix m) { for (int i = 0; i &lt; m.rows; i&#43;&#43;) { free(m.data[i]); } free(m.data); } void multiply(Matrix a, Matrix b, Matrix result) { for (int i = 0; i &lt; a.rows; i&#43;&#43;) { for (int j = 0; j &lt; b.cols; j&#43;&#43;) { result.data[i][j] = 0; for (int k = 0; k &lt; a.cols; k&#43;&#43;) { result.data[i][j] &#43;= a.data[i][k] * b.data[k][j]; } } } } int main() { Matrix A = allocate_matrix(2, 2); Matrix B = allocate_matrix(2, 2); Matrix C = allocate_matrix(2, 2); // Example matrices initialization A.data[0][0] = 1; A.data[0][1] = 2; A.data[1][0] = 3; A.data[1][1] = 4; B.data[0][0] = 5; B.data[0][1] = 6; B.data[1][0] = 7; B.data[1][1] = 8; multiply(A, B, C); printf(&#34;Result:\n&#34;); for (int i = 0; i &lt; C.rows; i&#43;&#43;) { for (int j = 0; j &lt; C.cols; j&#43;&#43;) { printf(&#34;%d &#34;, C.data[i][j]); } printf(&#34;\n&#34;); } free_matrix(A); free_matrix(B); free_matrix(C); return 0; } Compilation Command:
+...</p>
+  </div>
+  <footer class="entry-footer">3 分钟&nbsp;·&nbsp;Tianning Liu</footer>
+  <a class="entry-link" aria-label="post link to " href="http://localhost:1313/ZY2457B16/site_alastor/assignments/assignment_1/"></a>
+</article>
     </main>
     
 <footer class="footer">

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><script src="/ZY2457B16/site_alastor/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=ZY2457B16/site_alastor/livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Alastor&#39;s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="Matrix Multiplication Project Report
+Student Name: [Tianning Liu]
+Student ID: [ZY2457B16]
+Submission Date: [3/26/2025]
+
+System Configuration
+
+  
+      
+          Component
+          Details
+      
+  
+  
+      
+          CPU Model
+          AMD Ryzen 9 6900HX with Radeon Graphics
+      
+      
+          Memory Size
+          16GiB
+      
+      
+          Operating System Version
+          Linux Vivian 5.15.167.4-microsoft-standard-WSL2 #1 SMP Tue Nov 5 00:21:55 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+      
+      
+          Compiler Version
+          gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0
+      
+      
+          Python Version
+          Python 3.12.3
+      
+  
+
+
+Implementation Details
+C Language Implementation
+Source Code:
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+typedef struct {
+    int rows;
+    int cols;
+    int **data;
+} Matrix;
+
+Matrix allocate_matrix(int rows, int cols) {
+    Matrix m;
+    m.rows = rows;
+    m.cols = cols;
+    m.data = malloc(rows * sizeof(int*));
+    for (int i = 0; i &lt; rows; i&#43;&#43;) {
+        m.data[i] = malloc(cols * sizeof(int));
+    }
+    return m;
+}
+
+void free_matrix(Matrix m) {
+    for (int i = 0; i &lt; m.rows; i&#43;&#43;) {
+        free(m.data[i]);
+    }
+    free(m.data);
+}
+
+void multiply(Matrix a, Matrix b, Matrix result) {
+    for (int i = 0; i &lt; a.rows; i&#43;&#43;) {
+        for (int j = 0; j &lt; b.cols; j&#43;&#43;) {
+            result.data[i][j] = 0;
+            for (int k = 0; k &lt; a.cols; k&#43;&#43;) {
+                result.data[i][j] &#43;= a.data[i][k] * b.data[k][j];
+            }
+        }
+    }
+}
+
+int main() {
+    Matrix A = allocate_matrix(2, 2);
+    Matrix B = allocate_matrix(2, 2);
+    Matrix C = allocate_matrix(2, 2);
+
+    // Example matrices initialization
+    A.data[0][0] = 1; A.data[0][1] = 2;
+    A.data[1][0] = 3; A.data[1][1] = 4;
+
+    B.data[0][0] = 5; B.data[0][1] = 6;
+    B.data[1][0] = 7; B.data[1][1] = 8;
+
+    multiply(A, B, C);
+
+    printf(&#34;Result:\n&#34;);
+    for (int i = 0; i &lt; C.rows; i&#43;&#43;) {
+        for (int j = 0; j &lt; C.cols; j&#43;&#43;) {
+            printf(&#34;%d &#34;, C.data[i][j]);
+        }
+        printf(&#34;\n&#34;);
+    }
+
+    free_matrix(A);
+    free_matrix(B);
+    free_matrix(C);
+    return 0;
+}
+Compilation Command:">
+<meta name="author" content="Tianning Liu">
+<link rel="canonical" href="http://localhost:1313/ZY2457B16/site_alastor/assignments/assignment_1/">
+<link crossorigin="anonymous" href="/ZY2457B16/site_alastor/assets/css/stylesheet.6da9a63d25a9608bca2f7f907a030e887a7dd3c3f3918e4cc113129361414bda.css" integrity="sha256-bammPSWpYIvKL3&#43;QegMOiHp908PzkY5MwRMSk2FBS9o=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/ZY2457B16/site_alastor/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/ZY2457B16/site_alastor/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/ZY2457B16/site_alastor/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/ZY2457B16/site_alastor/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/ZY2457B16/site_alastor/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh" href="http://localhost:1313/ZY2457B16/site_alastor/assignments/assignment_1/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/ZY2457B16/site_alastor/" accesskey="h" title="Alastor&#39;s Blog (Alt + H)">Alastor&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/ZY2457B16/site_alastor/" title="Homepage">
+                    <span>Homepage</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/ZY2457B16/site_alastor/assignments/" title="Assignments">
+                    <span>Assignments</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/ZY2457B16/site_alastor/">主页</a>&nbsp;»&nbsp;<a href="http://localhost:1313/ZY2457B16/site_alastor/assignments/">Assignments</a></div>
+    <h1 class="post-title entry-hint-parent">
+      
+    </h1>
+    <div class="post-meta">3 分钟&nbsp;·&nbsp;Tianning Liu
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="matrix-multiplication-project-report">Matrix Multiplication Project Report<a hidden class="anchor" aria-hidden="true" href="#matrix-multiplication-project-report">#</a></h1>
+<p><strong>Student Name</strong>: [Tianning Liu]<br>
+<strong>Student ID</strong>: [ZY2457B16]<br>
+<strong>Submission Date</strong>: [3/26/2025]</p>
+<hr>
+<h2 id="system-configuration">System Configuration<a hidden class="anchor" aria-hidden="true" href="#system-configuration">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Component</th>
+          <th>Details</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>CPU Model</strong></td>
+          <td>AMD Ryzen 9 6900HX with Radeon Graphics</td>
+      </tr>
+      <tr>
+          <td><strong>Memory Size</strong></td>
+          <td>16GiB</td>
+      </tr>
+      <tr>
+          <td><strong>Operating System Version</strong></td>
+          <td>Linux Vivian 5.15.167.4-microsoft-standard-WSL2 #1 SMP Tue Nov 5 00:21:55 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux</td>
+      </tr>
+      <tr>
+          <td><strong>Compiler Version</strong></td>
+          <td>gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0</td>
+      </tr>
+      <tr>
+          <td><strong>Python Version</strong></td>
+          <td>Python 3.12.3</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="implementation-details">Implementation Details<a hidden class="anchor" aria-hidden="true" href="#implementation-details">#</a></h2>
+<h3 id="c-language-implementation">C Language Implementation<a hidden class="anchor" aria-hidden="true" href="#c-language-implementation">#</a></h3>
+<p><strong>Source Code</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> rows;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> cols;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> <span style="color:#f92672">**</span>data;
+</span></span><span style="display:flex;"><span>} Matrix;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Matrix <span style="color:#a6e22e">allocate_matrix</span>(<span style="color:#66d9ef">int</span> rows, <span style="color:#66d9ef">int</span> cols) {
+</span></span><span style="display:flex;"><span>    Matrix m;
+</span></span><span style="display:flex;"><span>    m.rows <span style="color:#f92672">=</span> rows;
+</span></span><span style="display:flex;"><span>    m.cols <span style="color:#f92672">=</span> cols;
+</span></span><span style="display:flex;"><span>    m.data <span style="color:#f92672">=</span> <span style="color:#a6e22e">malloc</span>(rows <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span><span style="color:#f92672">*</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> rows; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        m.data[i] <span style="color:#f92672">=</span> <span style="color:#a6e22e">malloc</span>(cols <span style="color:#f92672">*</span> <span style="color:#66d9ef">sizeof</span>(<span style="color:#66d9ef">int</span>));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> m;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">free_matrix</span>(Matrix m) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> m.rows; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">free</span>(m.data[i]);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">free</span>(m.data);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">multiply</span>(Matrix a, Matrix b, Matrix result) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> a.rows; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> b.cols; j<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>            result.data[i][j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; k <span style="color:#f92672">&lt;</span> a.cols; k<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>                result.data[i][j] <span style="color:#f92672">+=</span> a.data[i][k] <span style="color:#f92672">*</span> b.data[k][j];
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    Matrix A <span style="color:#f92672">=</span> <span style="color:#a6e22e">allocate_matrix</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>    Matrix B <span style="color:#f92672">=</span> <span style="color:#a6e22e">allocate_matrix</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>    Matrix C <span style="color:#f92672">=</span> <span style="color:#a6e22e">allocate_matrix</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Example matrices initialization
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    A.data[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; A.data[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>    A.data[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>; A.data[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    B.data[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>; B.data[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>;
+</span></span><span style="display:flex;"><span>    B.data[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>; B.data[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">multiply</span>(A, B, C);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Result:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> C.rows; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> C.cols; j<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d &#34;</span>, C.data[i][j]);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">free_matrix</span>(A);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">free_matrix</span>(B);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">free_matrix</span>(C);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Compilation Command</strong>:</p>
+<pre tabindex="0"><code>gcc matrix.c -o matrix
+</code></pre><p><strong>Execution Command</strong>:</p>
+<pre tabindex="0"><code>./matrix
+</code></pre><h3 id="python-language-implementation">Python Language Implementation<a hidden class="anchor" aria-hidden="true" href="#python-language-implementation">#</a></h3>
+<p><strong>Source Code</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">multiply_matrices</span>(A, B):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> np<span style="color:#f92672">.</span>dot(A, B)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example matrices</span>
+</span></span><span style="display:flex;"><span>A <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>], [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>]])
+</span></span><span style="display:flex;"><span>B <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([[<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>], [<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>]])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>C <span style="color:#f92672">=</span> multiply_matrices(A, B)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Result:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, C)
+</span></span></code></pre></div><p><strong>Execution Command</strong>:</p>
+<pre tabindex="0"><code>python3 matrix.py
+</code></pre><h2 id="algorithm-verification">Algorithm Verification<a hidden class="anchor" aria-hidden="true" href="#algorithm-verification">#</a></h2>
+<p>The correctness of the algorithms was verified by directly comparing outputs from the implemented algorithms (both C and Python versions) with the result produced by NumPy&rsquo;s built-in multiplication function (<code>np.dot</code>). The outputs from both implementations matched exactly, confirming correctness.</p>
+<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>This project demonstrated:</p>
+<ul>
+<li>
+<p>Command line operations for compiling and executing C programs.</p>
+</li>
+<li>
+<p>Using Markdown effectively to create structured documentation.</p>
+</li>
+</ul>
+<h2 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h2>
+<ul>
+<li>GCC Official Documentation: <a href="https://gcc.gnu.org/">https://gcc.gnu.org/</a></li>
+</ul>
+<h2 id="appendix">Appendix<a hidden class="anchor" aria-hidden="true" href="#appendix">#</a></h2>
+<h3 id="additional-notes">Additional Notes<a hidden class="anchor" aria-hidden="true" href="#additional-notes">#</a></h3>
+<ul>
+<li>Before compiling and executing, ensure the source files are placed correctly into the Ubuntu file system:</li>
+</ul>
+<p><strong>For C implementation (<code>matrix.c</code>):</strong></p>
+<pre tabindex="0"><code>nano matrix_mult.c
+</code></pre><p><strong>For Python implementation (<code>matrix.py</code>):</strong></p>
+<pre tabindex="0"><code>nano matrix_mult.py 
+</code></pre><p>After this, we can follow the commands provided earlier to compile (for C) and execute the files.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/ZY2457B16/site_alastor/">Alastor&#39;s Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

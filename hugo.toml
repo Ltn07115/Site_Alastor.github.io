@@ -26,11 +26,11 @@ timeZone = "Asia/Shanghai"
 
 [menu]
   [[menu.main]]
-    name = "主页"
+    name = "Homepage"
     url = "/"
     weight = 1
 
   [[menu.main]]
     name = "Assignments"
-    url = "/posts/"
+    url = "/assignments/"
     weight = 2
