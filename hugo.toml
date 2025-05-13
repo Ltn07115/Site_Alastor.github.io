@@ -15,12 +15,14 @@ timeZone = "Asia/Shanghai"
   ShowPostNavLinks = true
   ShowCodeCopyButtons = true
   ShowBreadCrumbs = true
-  defaultTheme = "auto"  # 可选：dark、light、auto
+  defaultTheme = "dark"  # 可选：dark、light、auto
+  homeInfoCenter = true  # 居中显示欢迎语
+ hidePostsSectionInHome = true
   disableThemeToggle = false
 
 [params.homeInfoParams]
-  Title = "欢迎访问我的博客"
-  Content = "这是一个基于 Hugo + PaperMod 的静态博客，用于记录我的学习与技术分享。"
+  Title = "Welcome to my site！"
+  Content = ""
 
 [menu]
   [[menu.main]]
@@ -29,6 +31,6 @@ timeZone = "Asia/Shanghai"
     weight = 1
 
   [[menu.main]]
-    name = "文章"
+    name = "Assignments"
     url = "/posts/"
     weight = 2
